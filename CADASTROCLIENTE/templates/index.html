@@ -7,17 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ nome }} </h1>
+    <h1> {{ nome }}</h1>
     <h2> {{ nome }}</h2>  
     <h3> {{ nome }}</h3>
     <h4> {{ nome }}</h4>
     <h5> {{ nome }}</h5>
     <h6> {{ nome }}</h6>
+
     <ul>
-        % for fruta in frutas %
-        <li>{{ fruta }}</li>
-        % endfor %
-    </ul>ul>
+        {% for fruta in frutas %}
+            <li>{{ fruta }}</li>
+        {% endfor %}
+    </ul>
 
 
 </body>
