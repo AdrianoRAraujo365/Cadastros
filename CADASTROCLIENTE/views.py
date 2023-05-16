@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from CADASTROCLIENTE.models import Cliente, Profissao
+from CADASTROCLIENTE.models import Cliente, Profissao, Telefone
 # Create your views here.
 def index(request):
     meu_nome = "Beltrano da Costa"
@@ -36,8 +36,11 @@ def lista_Profissoes(request):
 def detalhar_cliente(request, id):
     #Buscando no banco de dados o cliente pelo id
     cliente = Cliente.objects.get(id = id)
+    telefones = Telefone.objects.filter(cliente_id = id)
+
     context = {
-        "cliente": cliente
+        "cliente": cliente,
+        "telefones": telefones,
     }
     return render(request, "cliente_detalhes.html", context)
     
